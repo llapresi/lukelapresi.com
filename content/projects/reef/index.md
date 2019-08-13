@@ -24,3 +24,5 @@ we were initially stumped as to what form this creation would be and how it woul
 Understanding that the two most important demographics to appeal to were families with young children and potential RIT students,
 we knew that we needed to create a simple to understand yet technologically impressive exhibit in the span around 6 months,
 a fairly daunting task.
+
+During our first weeks of experimentation I though about the idea of 
