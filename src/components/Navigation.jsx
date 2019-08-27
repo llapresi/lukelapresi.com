@@ -54,7 +54,6 @@ const Name = styled.div`
     &:focus {
       text-decoration: none;
     }
-    line-height: 0.2;
   }
   font-weight: 700;
   transform: translateY(1px);
