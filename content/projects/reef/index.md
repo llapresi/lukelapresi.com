@@ -10,27 +10,29 @@ order: 1
 `youtube: https://www.youtube.com/watch?v=XeQvFEMa53k`
 
 
-The Reef is an exhibit that was showcased at Imagine RIT on April 27th, 2019. It set out to educate audiences of all ages about plastic pollution and encourage younger generations through social media and technology to become future environmental citizens.
-
-I acted as the Lead Engineer of the main exhibit, a double-widescreen Unity experience played using smartphones as game controllers. I created the core WebSocket based network code fascilitating the communcation between the
-smartphones and the main computer running the game, and created the core gameplay systems.
+The Reef is an exhibit that was showcased at Imagine RIT on April 27th, 2019. It set out to educate audiences about plastic pollution and encourage people to become environmentally conscious citizens through social media and technology. I acted as the Lead Engineer of the main exhibit, a double-widescreen Unity experience played using smartphones as game controllers. I created core gameplay systems including a WebSocket based network layer enabling communcation between smartphones and the game instance and several graphical effects.
 
 # Pitching the Project
 
-When we started the creation of the project, the prompt given to us was a simple two word edict: "do good."
-Plastic pollution was a problem we quickly brainstormed and agreed upon but we were initially stumped as to what form this creation would be.
+<div style="width: 100%; text-align: center; padding-bottom: 12px;">
+    <video autoplay loop style="width: 100%; margin: 0 auto; display: block">
+        <source src="./reef_proof_of_concept.mp4" type="video/mp4">
+    </video>
+    <br />
+    <em>
+        Proof of concept for phone/computer interaction
+        <br /> Left Side: computer view. Right Side: phone view
+    </em>
+</div>
 
-Understanding that the two most important demographics to appeal to were families with young children and potential RIT students, we knew that we needed to create a simple to understand yet technologically novel
-exhibit in the span around 6 months.
+Initially our 6 member team was only given a simple two word prompt: "do good." Plastic pollution was a relevant issue we all quickly agreed was worth exploring. Knowing that families with young children and potential RIT students were the two biggest groups of people at Imagine RIT, we set out to create a simple to understand yet technologically novel exhibit in the span around 5 months.
 
-We knew we wanted to created something with a real sense of presence and spectacle,
-and decided early on that we would use a double widescreen projection display inspired by
-[previous Imagine RIT exibit *THARSIS*.](https://www.youtube.com/watch?v=xGYJ0FaGlvw)
-*THARSIS* was a fairly static exibit however, and we wanted to one up it by creating something
-more interactive. The idea of pulling a piece of trash off the main projector display and onto
-a phone was an idea I brainstormed that seemed very inspiring to me, however the rest of the team
-felt it might have been too ambitious given our 6 month development time. Nevertheless, I
-felt strongly enough about the concept that I decided to create a quick and dirty proof of concept
-to try and prove that the concept wasn't too out of reach.
+The use a double widescreen projection display was inspired by [previous Imagine RIT exibit *THARSIS*.](https://www.youtube.com/watch?v=xGYJ0FaGlvw) *THARSIS* was a static exibit however, and we
+wanted to one up it and with something more interactive. The idea of pulling a piece of trash off the main projector display and onto a phone was an idea I brainstormed that was very inspiring to me.
+The rest of the team felt this idea might be too ambitious but I created a quick proof of concept that successfully got the rest of the team on board.
 
-### EMBED A VIDEO OF THE WEBSOCKET PROTOTYPE WITH THE TWO SPHERES HERE
+## Network Layer
+
+The smartphones controlled the main game through a WebSocket based JavaScript app.
+The phones sent their current gyroscope/orientation to a Socket server hosted on
+Heroku, which then in turn sent this information to the main game. 
