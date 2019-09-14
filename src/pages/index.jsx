@@ -2,13 +2,17 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import { ProjectListing } from 'components';
+import { HeroBanner } from '../components';
 
 const Index = ({
   data: {
     allMarkdownRemark: { edges: projectEdges },
   },
 }) => (
-  <ProjectListing projectEdges={projectEdges} />
+  <React.Fragment>
+    <HeroBanner />
+    <ProjectListing projectEdges={projectEdges} />
+  </React.Fragment>
 );
 
 export default Index;

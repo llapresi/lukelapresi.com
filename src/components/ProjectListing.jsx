@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'gatsby';
 import styled from 'react-emotion';
 import Img from 'gatsby-image';
+import HeroBanner from './HeroBanner';
 
 
 const Wrapper = styled.div`
@@ -16,6 +17,7 @@ const Wrapper = styled.div`
     grid-template-columns: repeat(3, minmax(280px, 1fr));
     width: ${props => props.theme.breakpoints.l};
   }
+
   padding-top: 1rem;
 `;
 

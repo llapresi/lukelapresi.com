@@ -6,5 +6,6 @@ import Navigation from './Navigation';
 import ProjectListing from './ProjectListing';
 import SEO from './SEO';
 import SocialMediaLinks from './SocialMediaLinks';
+import HeroBanner from './HeroBanner';
 
-export { Container, Footer, Header, Layout, Navigation, ProjectListing, SEO, SocialMediaLinks};
+export { Container, Footer, Header, Layout, Navigation, ProjectListing, SEO, SocialMediaLinks, HeroBanner };
