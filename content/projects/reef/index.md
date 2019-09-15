@@ -25,16 +25,13 @@ order: 1
 
 # Pitching the Project
 
-<div style="width: 100%; text-align: center; padding-bottom: 30px;">
-    <video autoplay muted loop style="width: 100%; margin: 0 auto; display: block">
-        <source src="./reef_proof_of_concept.mp4" type="video/mp4">
-    </video>
-    <div style="padding-top: 12px">
-        <em>
-            Proof of concept for phone/computer interaction
-            <br /> Left Side: computer view. Right Side: phone view
-        </em>
-    </div>
+<iframe src='https://gfycat.com/ifr/ExemplarySecondaryCockatiel' title="Proof of concept for phone/computer interaction" frameborder='0' scrolling='no' allowfullscreen width='640' height='404'></iframe>
+
+<div style="width: 100%; text-align: center; padding-bottom: 48px; padding-top:12px;">
+    <em>
+        Proof of concept for phone/computer interaction
+        <br /> Left Side: computer view. Right Side: phone view
+    </em>
 </div>
 
 Initially our 6 member team was only given a simple two word prompt: "do good." Plastic pollution was a relevant issue we all quickly agreed was worth exploring. Knowing that families with young children and potential RIT students were the two biggest groups of people at Imagine RIT, we set out to create a simple to understand yet technologically novel exhibit in the span around 5 months.
@@ -53,32 +50,26 @@ I created several to allow them to edit and create graphical effects.
 This included a "noise beam" shader, that uses two layers of procedurally generated noise to allow our designers
 to create effects such as beams of light, turbulence, and more.
 
-<div style="width: 100%; text-align: center; padding-bottom: 30px;">
-    <video autoplay loop muted style="width: 100%; margin: 0 auto; display: block">
-        <source src="./noisebeam_shader.mp4" type="video/mp4">
-    </video>
-    <div style="padding-top: 12px">
-        <em>
-            "Noise beam" shader and editor in action
-        </em>
-    </div>
+<iframe src='https://gfycat.com/ifr/weeklyadoredindianspinyloach' title="Noise beam shader and editor in action" frameborder='0' scrolling='no' allowfullscreen width='640' height='404'></iframe>
+
+<div style="width: 100%; text-align: center; padding-bottom: 48px; padding-top:12px;">
+    <em>
+        Noise beam shader and editor in action
+    </em>
 </div>
 
 Another important effect and tool I created was an animated fish shader, that allowed a single image of a fish
 to be procedurally animated.
 
-<div style="width: 100%; text-align: center; padding-bottom: 30px;">
-    <video autoplay loop muted style="width: 100%; margin: 0 auto; display: block">
-        <source src="./fish_shader.mp4" type="video/mp4">
-    </video>
-    <div style="padding-top: 12px">
-        <em>
-            Animated fish shader and editor in action
-        </em>
-    </div>
+<iframe src='https://gfycat.com/ifr/temptingseveralhaddock' title="Animated fish shader and editor in action" frameborder='0' scrolling='no' allowfullscreen width='640' height='404'></iframe>
+
+<div style="width: 100%; text-align: center; padding-bottom: 48px; padding-top:12px;">
+    <em>
+        Animated fish shader and editor in action
+    </em>
 </div>
 
-In the final game these were used in a particle system allowing tons of fish to be rendered on screen at once.
+In the final game these were used in a particle system allowing hundreds of fish to be rendered on screen at once.
 
 # Phone to Screen Interaction
 
