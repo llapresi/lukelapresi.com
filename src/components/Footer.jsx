@@ -23,9 +23,6 @@ const Footer = () => (
     <br />
     <span>Powered by </span>
     <a href="https://www.gatsbyjs.org/">Gatsby.js. </a>
-    <a href="https://github.com/LeKoArts/gatsby-starter-portfolio-emma">Emma Theme</a>
-    <span> by </span>
-    <a href="https://www.lekoarts.de">LekoArts</a>
   </Wrapper>
 );
 

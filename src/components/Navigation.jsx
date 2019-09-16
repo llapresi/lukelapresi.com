@@ -77,6 +77,12 @@ const NavLinks = styled.div`
   }
 `;
 
+const HideOnMobile = styled.div`
+  @media (max-width: ${props => props.theme.breakpoints.s}) {
+    display: none;
+  }
+`;
+
 const Navigation = () => (
   <Wrapper>
     <CenterToolbar>
@@ -101,13 +107,15 @@ const Navigation = () => (
           <span>About</span>
         </Link>
         <a
-          href={withPrefix('/resume.pdf')}
+          href={withPrefix('/Luke Lapresi Resume.pdf')}
         >
           <span>Resume</span>
         </a>
       </NavLinks>
       <FlexEnd>
-        <SocialMediaLinks />
+        <HideOnMobile>
+          <SocialMediaLinks />
+        </HideOnMobile>
       </FlexEnd>
     </CenterToolbar>
   </Wrapper>
