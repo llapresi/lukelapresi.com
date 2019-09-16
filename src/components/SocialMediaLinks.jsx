@@ -11,9 +11,6 @@ const SocialMedia = styled.div`
   a:not(:first-child) {
     margin-left: 1rem;
   }
-  @media (max-width: ${props => props.theme.breakpoints.s}) {
-    display: none;
-  }
 `;
 
 const SocialMediaLinks = () => (
