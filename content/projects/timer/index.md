@@ -8,7 +8,7 @@ order: 2
 ---
 Super Easy Timer is a macOS countdown timer app that uses a natural language parser to make
 setting times as easy as typing them out. ([www.supereasytimer.com](http://supereasytimer.com/).)
-I was the lead developer of Super Easy Timer during my internship at Super Easy Apps. Super Easy Timer was initially created for internal use by management but was moved to production after the results exceeded company’s expectations. Developed using Swift 4 with GitFlow, Scrum and XCTest.
+I was the lead developer of Super Easy Timer during my internship at Super Easy Apps. Super Easy Timer was initially created for internal use by management but was moved to production after results exceeded company’s expectations. Developed using Swift 4 in an Agile + Kanban, Test Driven environment with utilizing GitFlow and XCTest.
 
 <iframe src='https://gfycat.com/ifr/sourfamiliararrowana' title="Super Easy Timer in action" frameborder='0' scrolling='no' allowfullscreen width='640' height='404'></iframe>
 
@@ -24,15 +24,14 @@ online Swift development course. While I went into the job with zero experience 
 the Swift language and the macOS/iOS development platform, I quickly became proficient with the
 new development environment.
 
-My boss at Super Easy Apps is a fan of using countdown timers to manage his work time.
-However, he didn't like any of the existing timer apps on macOS.
-More often that not he was dismayed at how clunky the act of simply setting a timer was.
-When talking to me about his use of countdown timers and his issues with the existing ones for macOS, I proposed making a prototype for a new timer app that would focus on making the core act of setting timers as easy and streamlined as possible. My boss told me to see what I could do with the concept and after presenting him
-a prototype made in a few days, he was extremely impressed and tasked me to work on the timer as my primary job.
+My manager at Super Easy Apps is a fan of using countdown timers to manage his work time.
+However, he didn't like any of the existing timer apps on macOS, dismayed at how clunky the act of simply setting a timer was with them.
+When talking to me about his use of countdown timers and his issues with the existing ones for macOS, I proposed making a prototype for a new timer app that would focus on making the act of setting timers as easy and streamlined as possible. My boss told me to see what I could do with the concept and after presenting him
+a prototype made in a few days, he was impressed and tasked me to work on the timer as my primary job.
 
-# Description
+# Creating Keyboard Centered UX
 Super Easy Timer's workflow focused entirely around keyboard first use, avoiding the clunky mouse based menus most timers
-opt to use. Timers can be set by simply entering a duration (ex. "20min", "2 hours 12sec") and presssing enter.
+opt to use. Timers can be set by simply entering a duration (ex. "20min", "2 hours 12sec") and pressing enter.
 
 <iframe src='https://gfycat.com/ifr/impoliteshadowyaustrianpinscher' title="Super Easy Timer accepts multiple time formats." frameborder='0' scrolling='no' allowfullscreen width='640' height='404'></iframe>
 
