@@ -14,7 +14,7 @@ const About = () => (
         <p>
           a full-stack developer and a creator of experiences small, large, serious, playful,
           productivity-enhancing and productivity-destroying.
-          I've worked with many technologies and platforms including C#, Swift, Unity, ASP.n
+          I've worked with many technologies and platforms including C#, Swift, Unity, ASP.Net
           Bootstrap, JavaScript, Node, Anuglar, Webpack, React, Python and more.
         </p>
         <p>
