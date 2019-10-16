@@ -58,6 +58,7 @@ const Name = styled.div`
   font-weight: 700;
   transform: translateY(1px);
   text-transform: uppercase;
+  line-height: 1;
 `;
 
 const FlexEnd = styled.div`

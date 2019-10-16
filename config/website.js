@@ -16,7 +16,7 @@ module.exports = {
   ogLanguage: 'en_US',
   googleAnalyticsID: 'UA-127509635-1',
   // Manifest and Progress color
-  themeColor: '#00bfe9',
+  themeColor: '#001c21',
   backgroundColor: '#2b2e3c',
   // Settings for typography.jsx
   headerFontFamily: 'Roboto',
