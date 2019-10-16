@@ -8,4 +8,14 @@ import SEO from './SEO';
 import SocialMediaLinks from './SocialMediaLinks';
 import HeroBanner from './HeroBanner';
 
-export { Container, Footer, Header, Layout, Navigation, ProjectListing, SEO, SocialMediaLinks, HeroBanner };
+export {
+  Container,
+  Footer,
+  Header,
+  Layout,
+  Navigation,
+  ProjectListing,
+  SEO,
+  SocialMediaLinks,
+  HeroBanner,
+};

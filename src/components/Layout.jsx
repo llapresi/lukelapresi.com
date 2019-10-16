@@ -37,4 +37,5 @@ export default Layout;
 
 Layout.propTypes = {
   children: PropTypes.oneOfType([PropTypes.array, PropTypes.node]).isRequired,
+  location: PropTypes.string.isRequired,
 };
