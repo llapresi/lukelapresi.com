@@ -4,7 +4,8 @@ import { Link } from 'gatsby';
 import styled from 'react-emotion';
 import Img from 'gatsby-image';
 import HeroBanner from './HeroBanner';
-
+import CutCorner from './CutCorner';
+import { ProjectHeader, ProjectTitle, ProjectType } from './ProjectCard/ProjectCard';
 
 const Wrapper = styled.div`
   display: grid;
@@ -19,43 +20,6 @@ const Wrapper = styled.div`
   }
 
   padding-top: 1rem;
-`;
-
-const ProjectTitle = styled.div`
-  height: ${props => props.theme.homepagetiles.titleHeight}
-  will-change: background-position;
-  padding: 0.6rem;
-  padding-bottom: 0.65rem;
-  background-image: linear-gradient(to right, ${props => props.theme.brand.primary} 50%, 
-    ${props => props.theme.brand.secondary} 50%);
-  background-size: 200% 100%;
-  background-repeat: no-repeat;
-  background-position: bottom right;
-  > h2 {
-    text-transform: uppercase;
-    margin-bottom: -4px;
-    font-weight: 700 !important;
-    font-size:  1.4em;
-    color: #fff;
-    text-decoration: none;
-  }
-  > div {
-    margin-top: 0px;
-    font-size:  1.2em;    
-    color: #fff;
-    text-decoration: none;
-  }
-  transition: background-position 120ms;
-  transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
-
-  &:before {
-    content: '';
-    position: absolute;
-    top: 0; right: 0;
-    border-top: ${props => props.theme.corners.small} solid white;
-    border-left: ${props => props.theme.corners.small} solid transparent;
-    width: 0;
-}
 `;
 
 const Item = styled.div`
@@ -96,13 +60,13 @@ const ProjectLink = styled(Link)`
   }
   
   /* Have to define this twice for focus and hover for some reason */
-  :hover ${ProjectTitle} {
+  :hover ${ProjectHeader} {
     background-position: bottom left;
     transition: background-position 120ms;
     transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
   }
 
-  :focus ${ProjectTitle} {
+  :focus ${ProjectHeader} {
     background-position: bottom left;
     transition: background-position 120ms;
     transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1);
@@ -121,10 +85,10 @@ const ProjectListing = ({ projectEdges }) => (
             <ImageWrapper>
               <Img fluid={project.node.frontmatter.cover.childImageSharp.fluid} />
             </ImageWrapper>
-            <ProjectTitle>
-              <h2>{project.node.frontmatter.title}</h2>
-              <div>{project.node.frontmatter.service}</div>
-            </ProjectTitle>
+            <ProjectHeader>
+              <ProjectTitle>{project.node.frontmatter.title}</ProjectTitle>
+              <ProjectType>{project.node.frontmatter.service}</ProjectType>
+            </ProjectHeader>
           </Content>
         </Item>
       </ProjectLink>

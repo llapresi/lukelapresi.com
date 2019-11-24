@@ -7,6 +7,7 @@ import ProjectListing from './ProjectListing';
 import SEO from './SEO';
 import SocialMediaLinks from './SocialMediaLinks';
 import HeroBanner from './HeroBanner';
+import CutCorner from './CutCorner';
 
 export {
   Container,
@@ -18,4 +19,5 @@ export {
   SEO,
   SocialMediaLinks,
   HeroBanner,
+  CutCorner,
 };

@@ -3,11 +3,12 @@ import PropTypes from 'prop-types';
 import styled from 'react-emotion';
 import { graphql } from 'gatsby';
 import Helmet from 'react-helmet';
-import { Container, SEO, Layout } from 'components';
+import { Container, SEO } from 'components';
 import sample from 'lodash/sample';
-import Img from 'gatsby-image';
 import config from '../../config/website';
 import { overlay } from '../../config/theme';
+import { ProjectHeader, ProjectTitle, ProjectType } from '../components/ProjectCard/ProjectCard';
+
 
 const overlayColor = sample(overlay);
 
@@ -19,7 +20,8 @@ const Wrapper = styled.section`
   height: calc(100vh - ${props => props.theme.toolbar.height});
   overflow: hidden;
   color: white;
-  transform: translateZ(-.3px) scale(1.15);
+  transform: translateZ(-.25px) scale(1.125);
+  z-index: -1;
 `;
 
 const PageWrapper = styled.div`
@@ -43,20 +45,15 @@ const WrapperImage = styled.div`
   transform: translateZ(-.5px) scale(1.27);
 `;
 
-const InformationWrapper = styled.div`
+const InformationWrapper = styled(ProjectHeader)`
   position: absolute;
-  bottom: 128px;
-  left: 128px;
-  width:600px;
+  bottom: 6vw;
+  left: 5vw;
+  width: 400px;
+  height: auto;
   overflow: hidden;
-  background-color: black;
   display: flex;
   flex-direction: column;
-  &:before {
-    content: '';
-    display: block;
-    padding-top: ${props => props.theme.homepagetiles.ratio};
-  }
 `;
 
 const InfoBlock = styled.div`
@@ -77,11 +74,13 @@ const Top = styled.div`
   text-transform: uppercase;
 `;
 
-const Bottom = styled.div`
-  font-size: 125%;
+const InfoText = styled(ProjectType)`
+  font-size: 1.4em;
 `;
 
-const Header = styled.h1`
+const Header = styled(ProjectTitle)`
+  font-size: 2em;
+  margin-bottom: 0px;
 `;
 
 const Project = ({ pageContext: { slug }, data: { markdownRemark: postNode } }) => {
@@ -94,9 +93,9 @@ const Project = ({ pageContext: { slug }, data: { markdownRemark: postNode } }) 
         <Wrapper>
           <InformationWrapper>
             <Header>{project.title}</Header>
-            <Bottom>{project.service}</Bottom>
-            <Bottom>{project.client}</Bottom>
-            <Bottom>{project.date}</Bottom>
+            <InfoText>{project.service}</InfoText>
+            <InfoText>{project.client}</InfoText>
+            <InfoText>{project.date}</InfoText>
           </InformationWrapper>
         </Wrapper>
         <WrapperImage style={{
