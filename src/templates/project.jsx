@@ -12,23 +12,22 @@ import { overlay } from '../../config/theme';
 const overlayColor = sample(overlay);
 
 const Wrapper = styled.section`
-  text-align: center;
-  position: relative;
+  position: absolute;
+  left: 0;
+  top: 0;
   width: 100%;
-  color: white;
-  padding: 8rem ${props => props.theme.spacer.horizontal};
-  margin-bottom: -4rem;
-  z-index: -1;
-  box-shadow: inset 0px -50px 50px -50px rgba(0,0,0,0.6);
-  
-  @media (max-width: ${props => props.theme.breakpoints.m}) {
-    padding-top: 3rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    padding-bottom: 5.9rem;
-  }
-
+  height: calc(100vh - ${props => props.theme.toolbar.height});
   overflow: hidden;
+  color: white;
+  transform: translateZ(-.3px) scale(1.15);
+`;
+
+const PageWrapper = styled.div`
+  
+`;
+
+const ArticleWrapper = styled(Container)`
+  margin-top: calc(100vh - ${props => props.theme.toolbar.height});
 `;
 
 const WrapperImage = styled.div`
@@ -36,27 +35,28 @@ const WrapperImage = styled.div`
   left: 0;
   top: 0;
   width: 100%;
-  height: 100%;
+  height: calc(100vh - ${props => props.theme.toolbar.height});
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 50%;
-  z-index: -1;
-
-  /* Hack because edge doesn't support 'image-rendering' yet */
-  @supports (-ms-ime-align: auto) {
-    filter: blur(12px);
-    transform: scale3d(1.07, 1.07, 1);
-  }
-
-  image-rendering: pixelated;
-  image-rendering: -moz-crisp-edges;
+  z-index: -2;
+  transform: translateZ(-.5px) scale(1.27);
 `;
 
 const InformationWrapper = styled.div`
+  position: absolute;
+  bottom: 128px;
+  left: 128px;
+  width:600px;
+  overflow: hidden;
+  background-color: black;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-direction: column;
+  &:before {
+    content: '';
+    display: block;
+    padding-top: ${props => props.theme.homepagetiles.ratio};
+  }
 `;
 
 const InfoBlock = styled.div`
@@ -82,8 +82,6 @@ const Bottom = styled.div`
 `;
 
 const Header = styled.h1`
-  margin-top: -2rem;
-  margin-bottom: 1rem;
 `;
 
 const Project = ({ pageContext: { slug }, data: { markdownRemark: postNode } }) => {
@@ -92,30 +90,23 @@ const Project = ({ pageContext: { slug }, data: { markdownRemark: postNode } }) 
     <React.Fragment>
       <Helmet title={`${project.title} | ${config.siteTitle}`} />
       <SEO postPath={slug} postNode={postNode} postSEO />
-      <Wrapper>
+      <PageWrapper>
+        <Wrapper>
+          <InformationWrapper>
+            <Header>{project.title}</Header>
+            <Bottom>{project.service}</Bottom>
+            <Bottom>{project.client}</Bottom>
+            <Bottom>{project.date}</Bottom>
+          </InformationWrapper>
+        </Wrapper>
         <WrapperImage style={{
-          backgroundImage: `linear-gradient( rgba(0, 0, 0, 0.36), rgba(0, 0, 0, 0.25) ),  url(${project.cover.childImageSharp.resize.src})`,
+          backgroundImage: `url(${project.cover.childImageSharp.resize.src})`,
         }}
         />
-        <Header>{project.title}</Header>
-        <InformationWrapper>
-          <InfoBlock>
-            <Top>Client</Top>
-            <Bottom>{project.client}</Bottom>
-          </InfoBlock>
-          <InfoBlock>
-            <Top>Date</Top>
-            <Bottom>{project.date}</Bottom>
-          </InfoBlock>
-          <InfoBlock>
-            <Top>Type</Top>
-            <Bottom>{project.service}</Bottom>
-          </InfoBlock>
-        </InformationWrapper>
-      </Wrapper>
-      <Container type="text">
-        <div dangerouslySetInnerHTML={{ __html: postNode.html }} />
-      </Container>
+        <ArticleWrapper type="text">
+          <div dangerouslySetInnerHTML={{ __html: postNode.html }} />
+        </ArticleWrapper>
+      </PageWrapper>
     </React.Fragment>
   );
 };
@@ -143,7 +134,7 @@ export const pageQuery = graphql`
         service
         cover {
           childImageSharp {
-            resize(width:25) {
+            resize(width:1000) {
               src
             }
           }

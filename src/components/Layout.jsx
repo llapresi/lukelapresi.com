@@ -17,6 +17,13 @@ const PageParent = styled.div`{
   flex-direction: column;
 }`;
 
+const ParallaxParent = styled.div`
+  perspective: 2px;
+  height: calc(100vh - ${props => props.theme.toolbar.height});
+  overflow-x: hidden;
+  overflow-y: auto;
+}`;
+
 
 const Layout = ({ children, location }) => (
   <ThemeProvider theme={theme}>
@@ -25,10 +32,14 @@ const Layout = ({ children, location }) => (
       <Navigation />
       <MainContainer>
         <Transition location={location}>
-          {children}
+          <ParallaxParent>
+            <React.Fragment>
+              {children}
+              <Footer />
+            </React.Fragment>
+          </ParallaxParent>
         </Transition>
       </MainContainer>
-      <Footer />
     </PageParent>
   </ThemeProvider>
 );
