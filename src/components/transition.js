@@ -10,26 +10,29 @@ const getTransitionStyles = {
   entering: {
     position: `absolute`,
     opacity: 0,
-    transform: 'translate3d(0, 100px, 0)'
+    transform: 'translate3d(0, 100px, 0)',
+    overflow: 'hidden',
   },
   entered: {
     transition: `all ${animationTimeout}ms cubic-bezier(0.0, 0.0, 0.2, 1)`,
     opacity: 1,
-    transform: 'translate3d(0, 0px, 0)'
+    transform: 'translate3d(0, 0px, 0)',
+    overflow: 'hidden',
   },
   exiting: {
     transition: `all ${animationTimeout}ms cubic-bezier(0.4, 0.0, 1, 1)`,
     opacity: 0,
-    transform: 'translate3d(0, 100px, 0)'
+    transform: 'translate3d(0, 100px, 0)',
+    overflow: 'hidden',
   },
 };
 
 class Transition extends React.PureComponent {
   render() {
-    const { children, location } = this.props
+    const { children, location } = this.props;
     /* Have to use if to render without Transition components if location is undefined otherwise
     Gatsby will throw error during static HTML building */
-    if(location !== undefined) {
+    if (location !== undefined) {
       return (
         <TransitionGroup>
           <ReactTransition
