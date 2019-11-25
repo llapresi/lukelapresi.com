@@ -43,6 +43,30 @@ const WrapperImage = styled.div`
   background-position: 50% 50%;
   z-index: -2;
   transform: translateZ(-.5px) scale(1.27);
+
+  &:before {
+    background-color: ${props => props.highlight};
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    mix-blend-mode: darken;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  &:after {
+    background-color: ${props => props.shadow};
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    mix-blend-mode: lighten;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
 `;
 
 const InformationWrapper = styled(ProjectHeader)`
@@ -98,9 +122,12 @@ const Project = ({ pageContext: { slug }, data: { markdownRemark: postNode } }) 
             <InfoText>{project.date}</InfoText>
           </InformationWrapper>
         </Wrapper>
-        <WrapperImage style={{
-          backgroundImage: `url(${project.cover.childImageSharp.resize.src})`,
-        }}
+        <WrapperImage
+          style={{
+            backgroundImage: `url(${project.cover.childImageSharp.resize.src})`,
+          }}
+          highlight={project.duotoneHighlight}
+          shadow={project.duotoneShadow}
         />
         <ArticleWrapper type="text">
           <div dangerouslySetInnerHTML={{ __html: postNode.html }} />
@@ -131,9 +158,11 @@ export const pageQuery = graphql`
         date
         client
         service
+        duotoneHighlight
+        duotoneShadow
         cover {
           childImageSharp {
-            resize(width:1000) {
+            resize(width:800, grayscale: true) {
               src
             }
           }
