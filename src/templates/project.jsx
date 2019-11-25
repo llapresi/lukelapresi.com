@@ -4,7 +4,7 @@ import styled from 'react-emotion';
 import { keyframes } from 'emotion';
 import { graphql } from 'gatsby';
 import Helmet from 'react-helmet';
-import { Container, SEO } from 'components';
+import { Container, SEO, Arrow, ArrowGroup } from 'components';
 import sample from 'lodash/sample';
 import config from '../../config/website';
 import { overlay } from '../../config/theme';
@@ -19,7 +19,7 @@ const ArticleWrapper = styled.div`
   background-color: white;
 `;
 
-const Wrapper = styled.div`
+const TitleWrapper = styled.div`
   position: absolute;
   left: 0;
   top: 0;
@@ -29,7 +29,7 @@ const Wrapper = styled.div`
   z-index: -1;
 `;
 
-const WrapperImage = styled.div`
+const ImageWrapper = styled.div`
   position: absolute;
   left: 0;
   top: 0;
@@ -66,7 +66,7 @@ const WrapperImage = styled.div`
   }
 `;
 
-const InformationWrapper = styled(ProjectHeader)`
+const Card = styled(ProjectHeader)`
   position: absolute;
   left: 48px;
   bottom: 48px;
@@ -94,31 +94,17 @@ const Header = styled(ProjectTitle)`
 
 `;
 
-const ArrowDown = styled.i`
-  border: solid white;
-  border-width: 0 4px 4px 0;
-  display: inline-block;
-  padding: 8px;
-  transform: rotate(45deg);
-`;
-
-const bounce = keyframes`
-  from, 0%, 100% to {
-    transform: translate3d(0,0,0);
-  }
-
-  50% {
-    transform: translate3d(0, 15px, 0);
-  }
+const ArrowDown = styled(ArrowGroup)`
+  transform: rotate(90deg);
 `;
 
 const ArrowParent = styled.div`
   position: absolute;
   width: 100%;
-  text-align:center;
+  align-items: center;
+  justify-content: center;
   bottom: 75px;
-  animation: ${bounce} 0.7s cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite;
-
+  display: flex;
   @media (max-width: ${props => props.theme.breakpoints.m}) {
     width: auto;
     right: 40px;
@@ -131,18 +117,22 @@ const Project = ({ pageContext: { slug }, data: { markdownRemark: postNode } }) 
     <React.Fragment>
       <Helmet title={`${project.title} | ${config.siteTitle}`} />
       <SEO postPath={slug} postNode={postNode} postSEO />
-      <Wrapper>
-        <InformationWrapper>
+      <TitleWrapper>
+        <Card>
           <Header>{project.title}</Header>
           <InfoText>{project.service}</InfoText>
           <InfoText>{project.client}</InfoText>
           <InfoText>{project.date}</InfoText>
-        </InformationWrapper>
-      </Wrapper>
-      <ArrowParent>
-        <ArrowDown />
-      </ArrowParent>
-      <WrapperImage
+        </Card>
+        <ArrowParent>
+          <ArrowDown>
+            <Arrow />
+            <Arrow delay={0.1} />
+            <Arrow delay={0.2} />
+          </ArrowDown>
+        </ArrowParent>
+      </TitleWrapper>
+      <ImageWrapper
         style={{
           backgroundImage: `url(${project.cover.childImageSharp.resize.src})`,
         }}
