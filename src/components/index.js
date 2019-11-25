@@ -8,6 +8,7 @@ import SEO from './SEO';
 import SocialMediaLinks from './SocialMediaLinks';
 import HeroBanner from './HeroBanner';
 import CutCorner from './CutCorner';
+import { Arrow, ArrowGroup } from './Arrows';
 
 export {
   Container,
@@ -20,4 +21,6 @@ export {
   SocialMediaLinks,
   HeroBanner,
   CutCorner,
+  Arrow,
+  ArrowGroup,
 };
