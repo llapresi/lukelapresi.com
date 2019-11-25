@@ -5,9 +5,9 @@ cover: "./cover.png"
 date: "January - May 2019"
 service: "RIT Capstone Project"
 highlightColor: "rgb(145, 238, 255)"
-highlightBlend: "multiply"
+highlightBlend: "darken"
 shadowColor: "rgb(2, 18, 40)"
-shadowBlend: "lighten"
+shadowBlend: "soft-light"
 order: 1
 ---
 

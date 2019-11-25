@@ -9,6 +9,7 @@ import SocialMediaLinks from './SocialMediaLinks';
 import HeroBanner from './HeroBanner';
 import CutCorner from './CutCorner';
 import { Arrow, ArrowGroup } from './Arrows';
+import Duotone from './Duotone';
 
 export {
   Container,
@@ -23,4 +24,5 @@ export {
   CutCorner,
   Arrow,
   ArrowGroup,
+  Duotone,
 };
