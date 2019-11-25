@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'react-emotion';
-import { keyframes } from 'emotion';
 import { graphql } from 'gatsby';
 import Helmet from 'react-helmet';
 import { Container, SEO, Arrow, ArrowGroup } from 'components';
@@ -15,7 +14,7 @@ const overlayColor = sample(overlay);
 
 
 const ArticleWrapper = styled.div`
-  margin-top: calc(100vh - ${props => props.theme.toolbar.height});
+  margin-top: calc(100vh - ${props => props.theme.toolbar.height} - ${props => props.theme.project.bannerDistance});
   background-color: white;
 `;
 
@@ -24,9 +23,14 @@ const TitleWrapper = styled.div`
   left: 0;
   top: 0;
   width: 100%;
-  height: calc(100vh - ${props => props.theme.toolbar.height});
-  transform: translateZ(-.4px) scale(1.144);
+  height: calc(100vh - ${props => props.theme.toolbar.height} - ${props => props.theme.project.bannerDistance});
   z-index: -1;
+  transform-origin: 0 0;
+  transform: translateZ(-2px) scale(3);
+
+  @media (max-width: ${props => props.theme.breakpoints.s}) {
+    transform: translateZ(-0.4px) scale(1.4);
+  }
 `;
 
 const ImageWrapper = styled.div`
@@ -34,53 +38,30 @@ const ImageWrapper = styled.div`
   left: 0;
   top: 0;
   width: 100%;
-  height: calc(100vh - ${props => props.theme.toolbar.height});
+  height: calc(100vh - ${props => props.theme.toolbar.height} - ${props => props.theme.project.bannerDistance});
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 50%;
   z-index: -2;
-  transform: translateZ(-3px) scale(2.12);
-
-  &:before {
-    background-color: ${props => props.highlight};
-    content: '';
-    display: block;
-    width: 100%;
-    height: 100%;
-    mix-blend-mode: ${props => props.highlightBlend};
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-  
-  &:after {
-    background-color: ${props => props.shadow};
-    content: '';
-    display: block;
-    width: 100%;
-    height: 100%;
-    mix-blend-mode: ${props => props.shadowBlend};
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
+  transform-origin: 0 0;
+  transform: translateZ(-3px) scale(4);
 `;
 
 const Card = styled(ProjectHeader)`
   position: absolute;
+  top: 48px;
   left: 48px;
-  bottom: 48px;
   width: 400px;
   height: auto;
   overflow: hidden;
   display: flex;
   flex-direction: column;
 
-  @media (max-width: ${props => props.theme.breakpoints.m}) {
+  @media (max-width: ${props => props.theme.breakpoints.s}) {
     width: 100%;
     left: 0;
+    top: auto;
     bottom: 0;
-    padding: 20px;
   }
 `;
 
@@ -94,20 +75,9 @@ const Header = styled(ProjectTitle)`
 
 `;
 
-const ArrowDown = styled(ArrowGroup)`
-  transform: rotate(90deg);
-`;
-
-const ArrowParent = styled.div`
-  position: absolute;
-  width: 100%;
-  align-items: center;
-  justify-content: center;
-  bottom: 75px;
-  display: flex;
-  @media (max-width: ${props => props.theme.breakpoints.m}) {
-    width: auto;
-    right: 40px;
+const StyledContainer = styled(Container)`
+  @media (min-width: ${props => props.theme.breakpoints.s}) {
+    transform: translateY(-40px);
   }
 `;
 
@@ -124,27 +94,16 @@ const Project = ({ pageContext: { slug }, data: { markdownRemark: postNode } }) 
           <InfoText>{project.client}</InfoText>
           <InfoText>{project.date}</InfoText>
         </Card>
-        <ArrowParent>
-          <ArrowDown>
-            <Arrow />
-            <Arrow delay={0.1} />
-            <Arrow delay={0.2} />
-          </ArrowDown>
-        </ArrowParent>
       </TitleWrapper>
       <ImageWrapper
         style={{
           backgroundImage: `url(${project.cover.childImageSharp.resize.src})`,
         }}
-        highlight={project.highlightColor}
-        shadow={project.shadowColor}
-        highlightBlend={project.highlightBlend}
-        shadowBlend={project.shadowBlend}
       />
       <ArticleWrapper>
-        <Container type="text">
+        <StyledContainer type="text">
           <div dangerouslySetInnerHTML={{ __html: postNode.html }} />
-        </Container>
+        </StyledContainer>
       </ArticleWrapper>
     </React.Fragment>
   );
@@ -177,7 +136,10 @@ export const pageQuery = graphql`
         shadowBlend
         cover {
           childImageSharp {
-            resize(width:800, grayscale: true) {
+            resize(width:800, duotone: {
+              highlight: "#edc2c2",
+              shadow: "#2b0202"
+            }) {
               src
             }
           }
