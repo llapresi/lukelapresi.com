@@ -18,7 +18,8 @@ const PageParent = styled.div`{
 }`;
 
 const ParallaxParent = styled.div`
-  perspective: 3px;
+  perspective: 1px;
+  perspective-origin: 0 0;
   height: calc(100vh - ${props => props.theme.toolbar.height});
   overflow-x: hidden;
   overflow-y: auto;

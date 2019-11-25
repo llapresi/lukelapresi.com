@@ -29,6 +29,10 @@ const homepagetiles = {
   titleHeight: '4.28rem',
 };
 
+const project = {
+  bannerDistance: '100px',
+};
+
 export const overlay = ['#f76262', '#216583', '#65c0ba', '#35477d', '#6c5b7b', '#203541', '#9951ff', '#480032'];
 
 const theme = {
@@ -37,6 +41,7 @@ const theme = {
   corners,
   toolbar,
   homepagetiles,
+  project,
   breakpoints: {
     xs: '400px',
     s: '600px',
