@@ -3,12 +3,11 @@ import PropTypes from 'prop-types';
 import styled from 'react-emotion';
 import { graphql } from 'gatsby';
 import Helmet from 'react-helmet';
-import { Container, SEO, Arrow, ArrowGroup } from 'components';
+import { Container, SEO, Duotone } from 'components';
 import sample from 'lodash/sample';
 import config from '../../config/website';
 import { overlay } from '../../config/theme';
 import { ProjectHeader, ProjectTitle, ProjectType } from '../components/ProjectCard/ProjectCard';
-
 
 const overlayColor = sample(overlay);
 
@@ -33,15 +32,24 @@ const TitleWrapper = styled.div`
   }
 `;
 
+const HeroImage = styled.div`
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+  position: relative;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  mix-blend-mode: ${props => props.shadowBlend};
+`;
+
 const ImageWrapper = styled.div`
   position: absolute;
   left: 0;
   top: 0;
   width: 100%;
   height: calc(100vh - ${props => props.theme.toolbar.height} - ${props => props.theme.project.bannerDistance});
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: 50% 50%;
   z-index: -2;
   transform-origin: 0 0;
   transform: translateZ(-3px) scale(4);
@@ -95,11 +103,18 @@ const Project = ({ pageContext: { slug }, data: { markdownRemark: postNode } }) 
           <InfoText>{project.date}</InfoText>
         </Card>
       </TitleWrapper>
-      <ImageWrapper
-        style={{
-          backgroundImage: `url(${project.cover.childImageSharp.resize.src})`,
-        }}
-      />
+      <ImageWrapper>
+        <Duotone
+          shadowColor={project.shadowColor}
+          shadowBlend={project.shadowBlend}
+          highlightColor={project.highlightColor}
+          highlightBlend={project.highlightBlend}
+        >
+          <HeroImage
+            style={{ backgroundImage: `url(${project.cover.childImageSharp.resize.src})` }}
+          />
+        </Duotone>
+      </ImageWrapper>
       <ArticleWrapper>
         <StyledContainer type="text">
           <div dangerouslySetInnerHTML={{ __html: postNode.html }} />
@@ -136,10 +151,7 @@ export const pageQuery = graphql`
         shadowBlend
         cover {
           childImageSharp {
-            resize(width:800, duotone: {
-              highlight: "#edc2c2",
-              shadow: "#2b0202"
-            }) {
+            resize(width:800, grayscale: true) {
               src
             }
           }
