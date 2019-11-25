@@ -4,6 +4,8 @@ title: "Super Easy Timer"
 cover: "./cover.jpg"
 date: "August - December 2017"
 service: "macOS App"
+duotoneHighlight: "#fadac0"
+duotoneShadow: "#523202"
 order: 2
 ---
 Super Easy Timer is a macOS countdown timer app that uses a natural language parser to make

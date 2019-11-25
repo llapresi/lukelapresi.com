@@ -18,7 +18,7 @@ const PageParent = styled.div`{
 }`;
 
 const ParallaxParent = styled.div`
-  perspective: 2px;
+  perspective: 3px;
   height: calc(100vh - ${props => props.theme.toolbar.height});
   overflow-x: hidden;
   overflow-y: auto;
@@ -33,10 +33,8 @@ const Layout = ({ children, location }) => (
       <MainContainer>
         <Transition location={location}>
           <ParallaxParent>
-            <React.Fragment>
-              {children}
-              <Footer />
-            </React.Fragment>
+            {children}
+            <Footer />
           </ParallaxParent>
         </Transition>
       </MainContainer>

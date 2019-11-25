@@ -16,7 +16,7 @@ const colors = {
 };
 
 const corners = {
-  small: '1.7em',
+  small: '1.3em',
   large: '3.8em',
 };
 

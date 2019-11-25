@@ -4,8 +4,10 @@ title: "The Reef"
 cover: "./cover.png"
 date: "January - May 2019"
 service: "RIT Capstone Project"
-duotoneHighlight: "#113659"
-duotoneShadow: "#3ee1ed"
+highlightColor: "rgb(145, 238, 255)"
+highlightBlend: "multiply"
+shadowColor: "rgb(2, 18, 40)"
+shadowBlend: "lighten"
 order: 1
 ---
 
