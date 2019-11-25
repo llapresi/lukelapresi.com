@@ -116,8 +116,8 @@ const ArrowParent = styled.div`
   position: absolute;
   width: 100%;
   text-align:center;
-  bottom: 70px;
-  animation: ${bounce} 0.8s cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite;
+  bottom: 75px;
+  animation: ${bounce} 0.7s cubic-bezier(0.785, 0.135, 0.15, 0.86) infinite;
 
   @media (max-width: ${props => props.theme.breakpoints.m}) {
     width: auto;
