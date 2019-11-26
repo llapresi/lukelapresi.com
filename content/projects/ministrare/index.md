@@ -4,6 +4,10 @@ title: "Ministrare"
 cover: "./gameui1.png"
 date: "August - December 2018"
 service: "Unity3D Game + Tools"
+highlightColor: "#533c44"
+highlightBlend: "color-dodge"
+shadowColor: "#225562"
+shadowBlend: "hard-light"
 order: 4
 ---
 Ministrare is a strategy game created as a RIT Production Studio group project based around the concept of "strategic communication." I acted as the lead programmer

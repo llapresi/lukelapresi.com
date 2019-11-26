@@ -5,6 +5,10 @@ cover: "./cover.png"
 date: "May - October 2017"
 service: "Unity3D Game"
 order: 6
+highlightColor: "rgb(200,214,192)"
+highlightBlend: "darken"
+shadowColor: "rgb(43,30,21)"
+shadowBlend: "luminosity"
 ---
 
 `youtube: https://www.youtube.com/watch?v=7GgiYMg3NFA`
