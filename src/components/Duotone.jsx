@@ -10,12 +10,8 @@ const FullsizeDiv = styled.div`
   height: 100%;
 `;
 
-const DuotoneShadow = styled(FullsizeDiv)`
-  background-color: ${props => props.shadowColor};
-`;
-
 // Gradient Generator
-const FallbackGradient = styled(FullsizeDiv)`
+const Gradient = styled(FullsizeDiv)`
   background: linear-gradient(0deg, ${props => props.shadowColor} 0%, ${props => props.highlightColor} 100%);
 `;
 
@@ -28,11 +24,12 @@ const DuotoneHighlight = styled(FullsizeDiv)`
   }
 `;
 
-const ChhildrenParent = styled(FullsizeDiv)`
+// shadowBlend is passed in a prop to detect IE/Edge fallback
+const ChildrenParent = styled(FullsizeDiv)`
   mix-blend-mode: ${props => props.shadowBlend};
 
   @supports not (mix-blend-mode: ${props => props.shadowBlend}) {
-    opacity: 0.7;
+    opacity: 0.5;
   }
 `;
 
@@ -40,15 +37,15 @@ const Duotone = ({
   shadowColor, shadowBlend, highlightColor, highlightBlend, children,
 }) => (
   <React.Fragment>
-    <FallbackGradient
+    <Gradient
       shadowBlend={shadowBlend}
       shadowColor={shadowColor}
       highlightColor={highlightColor}
     />
     {/* <DuotoneShadow shadowColor={shadowColor} /> */}
-    <ChhildrenParent shadowBlend={shadowBlend}>
+    <ChildrenParent shadowBlend={shadowBlend}>
       {children}
-    </ChhildrenParent>
+    </ChildrenParent>
     <DuotoneHighlight highlightColor={highlightColor} highlightBlend={highlightBlend} />
   </React.Fragment>
 );

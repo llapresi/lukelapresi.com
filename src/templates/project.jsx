@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'react-emotion';
 import { graphql } from 'gatsby';
 import Helmet from 'react-helmet';
-import { Container, SEO, Duotone } from 'components';
+import { Container, SEO, Duotone, CutCorner } from 'components';
 import sample from 'lodash/sample';
 import config from '../../config/website';
 import { overlay } from '../../config/theme';
@@ -85,8 +85,9 @@ const Header = styled(ProjectTitle)`
 
 const StyledContainer = styled(Container)`
   @media (min-width: ${props => props.theme.breakpoints.s}) {
-    transform: translateY(-40px);
+    transform: translateY(-60px);
   }
+  background: linear-gradient(225deg, transparent ${props => props.theme.corners.small},  white ${props => props.theme.corners.small});
 `;
 
 const Project = ({ pageContext: { slug }, data: { markdownRemark: postNode } }) => {
@@ -151,7 +152,7 @@ export const pageQuery = graphql`
         shadowBlend
         cover {
           childImageSharp {
-            resize(width:800, grayscale: true) {
+            resize(width:1100, grayscale: true) {
               src
             }
           }

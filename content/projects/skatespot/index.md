@@ -4,8 +4,10 @@ title: "Skatespot.io"
 cover: "./cover.png"
 date: "March 2018 - Present"
 service: "Progressive Web App"
-duotoneHighlight: "#edc2c2"
-duotoneShadow: "#2b0202"
+highlightColor: "#122d2e"
+highlightBlend: "screen"
+shadowColor: "#fbfcc2"
+shadowBlend: "multiply"
 order: 3
 ---
 Skatespot.io is a Progressive Web App that allows skateboarders to find and add points of interest, including spots, parks, stores and more.
