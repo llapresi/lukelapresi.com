@@ -3,14 +3,14 @@ client: "Luke Lapresi"
 title: "Skatespot.io"
 cover: "./cover.png"
 date: "March 2018 - Present"
-service: "Progressive Web App"
+service: "Full Stack Web App"
 highlightColor: "#122d2e"
 highlightBlend: "screen"
 shadowColor: "#fbfcc2"
 shadowBlend: "multiply"
 order: 3
 ---
-Skatespot.io is a Progressive Web App that allows skateboarders to find and add points of interest, including spots, parks, stores and more.
+Skatespot.io is a Full Stack Web App that allows skateboarders to find and add points of interest, including spots, parks, stores and more.
 
 ### [Checkout skatespot.io on GitHub](https://github.com/llapresi/skatespot.io)
 ### [Try it out on the skatespot.io demo server](https://skatespot-demo.herokuapp.com)
@@ -36,5 +36,5 @@ Skatespot.io's front end is built using modern JavaScript, React, React Router, 
 between dynamic screens. The back end uses Node.js, Express, MongoDB and Mongoose to create a database that allows users to add and search for
 points of interest alongsides comments and other users.
 
-As a Progressive Web App, Skatespot.io caches the main app shell using the Service Workers API if the user adds it to their mobile home screen.
+Skatespot.io is a Progressive Web App, caching the main app shell using the Service Workers API if the user adds it to their mobile home screen.
 This allows the app's initial startup time to be sped up dramatically  

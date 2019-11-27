@@ -8,8 +8,6 @@ module.exports = {
   siteDescription: 'Luke Lapresi - Full-Stack Developer',
   author: 'Luke Lapresi', // Author for schemaORGJSONLD
   // siteFBAppID: '123456789', // Facebook App ID - Optional
-  userTwitter: '@thelukelapresi', // Twitter Username
-  ogSiteName: 'lukelapresi', // Facebook Site Name
   emailAddress: 'mailto:llapresi@me.com',
   githubUrl: 'https://www.github.com/llapresi',
   linkedinUrl: 'https://www.linkedin.com/in/luke-lapresi/',

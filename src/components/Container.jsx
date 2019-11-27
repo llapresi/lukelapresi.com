@@ -10,16 +10,7 @@ const Wrapper = styled.div`
   padding-top: 32px;
   border-top: 5px solid ${props => props.theme.brand.primary};
   box-shadow: 0 -30px 24px -24px rgba(0,0,0,.4);
-  ${props => props.type === 'text'
-    && css`
-      p {
-        font-size: 1.25rem;
-        letter-spacing: -0.003em;
-        line-height: 1.58;
-        --baseline-multiplier: 0.179;
-        --x-height-multiplier: 0.35;
-      }
-    `};
+
 `;
 
 const Container = ({ children, type, className }) => (
