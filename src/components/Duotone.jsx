@@ -16,20 +16,22 @@ const Gradient = styled(FullsizeDiv)`
 `;
 
 const DuotoneHighlight = styled(FullsizeDiv)`
-  background-color: ${props => props.highlightColor};
-  mix-blend-mode: ${props => props.highlightBlend};
+  display: none;
 
-  @supports not (mix-blend-mode: ${props => props.highlightBlend}) {
-    display: none;
+  @supports (mix-blend-mode: ${props => props.highlightBlend}) {
+    display: auto;
+    background-color: ${props => props.highlightColor};
+    mix-blend-mode: ${props => props.highlightBlend};
   }
 `;
 
 // shadowBlend is passed in a prop to detect IE/Edge fallback
 const ChildrenParent = styled(FullsizeDiv)`
-  mix-blend-mode: ${props => props.shadowBlend};
+  opacity: 0.5;
 
-  @supports not (mix-blend-mode: ${props => props.shadowBlend}) {
-    opacity: 0.5;
+  @supports (mix-blend-mode: ${props => props.shadowBlend}) {
+    opacity: 1;
+    mix-blend-mode: ${props => props.shadowBlend};
   }
 `;
 
