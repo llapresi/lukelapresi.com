@@ -87,7 +87,6 @@ const StyledContainer = styled(Container)`
   @media (min-width: ${props => props.theme.breakpoints.s}) {
     transform: translateY(-60px);
   }
-  background: linear-gradient(225deg, transparent ${props => props.theme.corners.small},  white ${props => props.theme.corners.small});
 `;
 
 const Project = ({ pageContext: { slug }, data: { markdownRemark: postNode } }) => {
