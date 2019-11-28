@@ -9,21 +9,24 @@ import Transition from './transition';
 const MainContainer = styled.div`{
   margin-top: ${props => props.theme.toolbar.height};
   flex: 1;
+  overflow: hidden;
 }`;
 
 const PageParent = styled.div`{
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
+  overflow: hidden;
+  @supports (height: -webkit-fill-available) {
+    height: -webkit-fill-available;
+  }
 }`;
 
 const ParallaxParent = styled.div`
   perspective: 1px;
   perspective-origin: 0 0;
-  overflow-y: auto;
+  overflow-y: scroll;
   overflow-x: hidden;
   width: 100%;
   height: calc(100vh - ${props => props.theme.toolbar.height});
+  -webkit-overflow-scrolling: touch;
 }`;
 
 
