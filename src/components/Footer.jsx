@@ -6,6 +6,7 @@ import SocialMediaLinks from './SocialMediaLinks';
 const Wrapper = styled.footer`
   margin: 5rem 0;
   padding: 1rem ${props => props.theme.spacer.horizontal};
+  padding-bottom: 3rem;
   text-align: center;
   a {
     text-decoration: none;
