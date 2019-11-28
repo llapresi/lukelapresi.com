@@ -1,10 +1,10 @@
 {
-  "name": "llapresi.github.io",
+  "name": "lukelapresi.com",
   "description": "Luke Lapresi Portfolio Site",
   "version": "2.0.0",
   "author": "Luke Lapresi",
   "repository": {
-    "url": "https://github.com/llapresi/llapresi.github.io",
+    "url": "https://github.com/llapresi/lukelapresi.com",
     "type": "git"
   },
   "dependencies": {
