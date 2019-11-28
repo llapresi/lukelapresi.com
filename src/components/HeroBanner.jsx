@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'react-emotion';
-import video from '../pages/hero_video.mp4';
 
 const HeroBannerSpace = styled.div`
   position: relative;
@@ -61,8 +60,8 @@ const CenteredHeader = styled.h1`
 const HeroBanner = () => (
   <HeroBannerSpace>
     <Content>
-      <FullVideo autoPlay loop muted playsInline>
-        <source src={video} />
+      <FullVideo muted autoPlay loop playsInline>
+        <source src="/hero_video.mp4" />
       </FullVideo>
     </Content>
   </HeroBannerSpace>
