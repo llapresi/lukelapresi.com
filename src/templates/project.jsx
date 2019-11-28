@@ -30,6 +30,10 @@ const TitleWrapper = styled.div`
   @media (max-width: ${props => props.theme.breakpoints.s}) {
     transform: translateZ(-0.4px) scale(1.4);
   }
+
+  @supports (-webkit-overflow-scrolling: touch) {
+    transform: translateZ(0px) scale(1); 
+  }
 `;
 
 const HeroImage = styled.div`
@@ -53,6 +57,10 @@ const ImageWrapper = styled.div`
   z-index: -2;
   transform-origin: 0 0;
   transform: translateZ(-3px) scale(4);
+
+  @supports (-webkit-overflow-scrolling: touch) {
+    transform: translateZ(0px) scale(1); 
+  }
 `;
 
 const Card = styled(ProjectHeader)`
