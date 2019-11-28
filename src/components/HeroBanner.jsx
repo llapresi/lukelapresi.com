@@ -61,7 +61,7 @@ const CenteredHeader = styled.h1`
 const HeroBanner = () => (
   <HeroBannerSpace>
     <Content>
-      <FullVideo autoPlay loop muted>
+      <FullVideo autoPlay loop muted playsInline>
         <source src={video} />
       </FullVideo>
     </Content>
