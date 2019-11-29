@@ -31,8 +31,8 @@ const TitleWrapper = styled.div`
     transform: translateZ(-0.4px) scale(1.4);
   }
 
-  @supports (-webkit-overflow-scrolling: touch) {
-    transform: translateZ(0px) scale(1); 
+  ${props => props.theme.fallbackSelector} {
+    transform: initial; 
   }
 `;
 
@@ -58,8 +58,8 @@ const ImageWrapper = styled.div`
   transform-origin: 0 0;
   transform: translateZ(-3px) scale(4);
 
-  @supports (-webkit-overflow-scrolling: touch) {
-    transform: translateZ(0px) scale(1); 
+  ${props => props.theme.fallbackSelector} {
+    transform: initial; 
   }
 `;
 
