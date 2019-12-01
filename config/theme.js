@@ -56,7 +56,7 @@ const theme = {
     horizontal: '2rem',
     vertical: '3rem',
   },
-  fallbackSelector: '@supports (-webkit-overflow-scrolling: touch) or (-ms-ime-align: auto)',
+  fallbackSelector: '@supports (-webkit-overflow-scrolling: touch)',
 };
 
 export default theme;

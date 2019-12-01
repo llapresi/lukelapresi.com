@@ -13,7 +13,8 @@ export default function HTML(props) {
         />
         {props.headComponents}
       </head>
-      <body {...props.bodyAttributes}>
+      <body {...props.bodyAttributes} style={{ transform: 'translateZ(0px)' }}>
+        <div style={{ position: 'fixed', top: '0', width: '1px', height: '1px', zIndex: '1' }} />
         {props.preBodyComponents}
         <noscript key="noscript" id="gatsby-noscript">
           This app works best with JavaScript enabled.
