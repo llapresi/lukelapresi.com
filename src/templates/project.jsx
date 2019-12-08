@@ -5,6 +5,7 @@ import { graphql } from 'gatsby';
 import Helmet from 'react-helmet';
 import { Container, SEO, Duotone, CutCorner } from 'components';
 import sample from 'lodash/sample';
+import BackgroundImage from 'gatsby-background-image';
 import config from '../../config/website';
 import { overlay } from '../../config/theme';
 import { ProjectHeader, ProjectTitle, ProjectType } from '../components/ProjectCard/ProjectCard';
@@ -36,11 +37,7 @@ const TitleWrapper = styled.div`
   }
 `;
 
-const HeroImage = styled.div`
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: 50% 50%;
-  position: relative;
+const HeroImage = styled(BackgroundImage)`
   left: 0;
   top: 0;
   width: 100%;
@@ -97,6 +94,7 @@ const StyledContainer = styled(Container)`
   }
 `;
 
+
 const Project = ({ pageContext: { slug }, data: { markdownRemark: postNode } }) => {
   const project = postNode.frontmatter;
   return (
@@ -118,9 +116,7 @@ const Project = ({ pageContext: { slug }, data: { markdownRemark: postNode } }) 
           highlightColor={project.highlightColor}
           highlightBlend={project.highlightBlend}
         >
-          <HeroImage
-            style={{ backgroundImage: `url(${project.cover.childImageSharp.resize.src})` }}
-          />
+          <HeroImage fluid={project.cover.childImageSharp.fluid} />
         </Duotone>
       </ImageWrapper>
       <ArticleWrapper>
@@ -159,8 +155,8 @@ export const pageQuery = graphql`
         shadowBlend
         cover {
           childImageSharp {
-            resize(width:1100, grayscale: true) {
-              src
+            fluid(maxWidth: 800, grayscale: true) {
+              ...GatsbyImageSharpFluid
             }
           }
         }
