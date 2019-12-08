@@ -5,7 +5,7 @@ import { graphql } from 'gatsby';
 import Helmet from 'react-helmet';
 import { Container, SEO, Duotone, CutCorner } from 'components';
 import sample from 'lodash/sample';
-import BackgroundImage from 'gatsby-background-image';
+import Img from 'gatsby-image';
 import config from '../../config/website';
 import { overlay } from '../../config/theme';
 import { ProjectHeader, ProjectTitle, ProjectType } from '../components/ProjectCard/ProjectCard';
@@ -37,7 +37,7 @@ const TitleWrapper = styled.div`
   }
 `;
 
-const HeroImage = styled(BackgroundImage)`
+const HeroImage = styled(Img)`
   left: 0;
   top: 0;
   width: 100%;
